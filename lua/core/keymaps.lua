@@ -14,7 +14,7 @@ keymap.set("v", "<RightMouse>", '"+p', {silent = true}) -- RMB click and copy te
 
 -- Text operations
 keymap.set("i", "<c-u>", "<Esc>viwUea") -- Turn the word under cursor to upper case
-keymap.set("i", "<c-t>", "<Esc>b~lea") -- Turn the current word into title case
+keymap.set("i", "<c-t>", "<Esc>b~lea")  -- Turn the current word into title case
 
 -- Leader keys for shortcuts and mappings
 vim.g.mapleader = ' '       -- Sets the "leader" key to the spacebar for custom shortcuts in Vim.
