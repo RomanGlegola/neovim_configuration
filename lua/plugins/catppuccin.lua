@@ -1,60 +1,51 @@
-require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
-    background = { -- :h background
+require("catppuccin").setup({ -- Require and set up the 'catppuccin' theme module.
+    flavour = "mocha",        -- Choose the color flavor for the theme. Options: 'latte', 'frappe', 'macchiato', 'mocha'.
+    background = {            -- Set the background variants for light and dark mode.
         light = "latte",
         dark = "mocha",
     },
-    transparent_background = true, -- disables setting the background color.
-    show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
-    term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
-    dim_inactive = {
-        enabled = false, -- dims the background color of inactive window
-        shade = "dark",
-        percentage = 0.15, -- percentage of the shade to apply to the inactive window
+    transparent_background = true, -- Enable transparent background.
+    show_end_of_buffer = false,    -- Disable showing '~' characters at the end of the buffer.
+    term_colors = true,            -- Enable setting terminal colors.
+    
+    dim_inactive = {       -- Configuration for dimming inactive windows.
+        enabled = false,   -- Disable dimming of inactive windows.
+        shade = "dark",    -- Set the shade type for dimming.
+        percentage = 0.15, -- Set the dimming percentage.
     },
-    styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-        comments = { "italic" }, -- Change the style of comments
-        conditionals = { "italic" },
-        loops = {},
-        functions = {},
-        keywords = {},
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
+    styles = {                       -- Customize styles for various syntax groups.
+        comments = { "italic" },     -- Italicize comments.
+        conditionals = { "italic" }, -- Italicize conditionals.
     },
-    color_overrides = {},
-    custom_highlights = {},
-    integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        notify = true,
-        mini = false,
-        dashboard = true,
-        mason = true,
-        which_key = true,
-        lsp_trouble = true,
-        telescope = true,
-        treesitter = true,
-        native_lsp = {
+
+    color_overrides = {},   -- Custom color overrides.
+    custom_highlights = {}, -- Custom highlight groups.
+
+    integrations = {        -- Integration with other plugins.
+        cmp = true,         -- Integration with nvim-cmp for auto-completion.
+        gitsigns = true,    -- Integration with gitsigns for Git indicators.
+        nvimtree = true,    -- Integration with NvimTree for file explorer.
+        notify = true,      -- Integration with notify for notifications.
+        mini = false,       -- Disable integration with mini plugins.
+        dashboard = true,   -- Integration with dashboard-nvim for start screen.
+        mason = true,       -- Integration with Mason for LSP installation.
+        which_key = true,   -- Integration with which-key for keybindings popup.
+        lsp_trouble = true, -- Integration with lsp-trouble for LSP diagnostics.
+        telescope = true,   -- Integration with Telescope for fuzzy finding.
+        treesitter = true,  -- Integration with treesitter for syntax highlighting.
+        native_lsp = {      -- Native LSP settings.
             enabled = true,
-            virtual_text = {
-                errors = { "italic" },
-                hints = { "italic" },
-                warnings = { "italic" },
-                information = { "italic" },
+            virtual_text = {                -- Customize virtual text styling for diagnostics.
+                errors = { "italic" },      -- Italicize errors.
+                hints = { "italic" },       -- Italicize hints.
+                warnings = { "italic" },    -- Italicize warnings.
+                information = { "italic" }, -- Italicize informations.
             },
             inlay_hints = {
-                background = true,
+                background = true, -- Enable background for inlay hints.
             },
         },
-        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 })
 
--- setup must be called before loading
-vim.cmd.colorscheme "catppuccin"
+vim.cmd("colorscheme catppuccin") -- Activate the colorscheme
