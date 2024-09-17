@@ -42,4 +42,13 @@ require("lazy").setup(
     "neovim/nvim-lspconfig",             -- Provide configurations and setups for LSP client, allowing easy connection to various language servers.
     "hrsh7th/nvim-cmp",                  -- Provide autocompletion plugin, supports variety of completion sources.
     "onsails/lspkind-nvim",
+
+-- Add nvim-treesitter plugin without the configuration (use external config)
+    {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+        config = function()
+            require("plugins.treesitter") -- Load your separate treesitter config
+        end,
+    },
 })
