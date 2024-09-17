@@ -65,6 +65,7 @@ local on_attach = function(client, bufnr) -- Function called when each LSP serve
             vim.b.diagnostics_pos = cursor_pos -- Update the stored diagnostics position to the current cursor position.
         end,
     })
+end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()) -- Update nvim-cmp capabilities for LSP servers
 

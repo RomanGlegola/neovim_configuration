@@ -1,6 +1,6 @@
--- vim.loader.enable() -- Byte compiling lua files to load them faster
+vim.loader.enable() -- Byte compiling lua files to load them faster
 
--- local version = vim.version
+local version = vim.version
 
 local function load_configs_from_directory(directory)    -- Load configuration files from a specified directory.
     local config_files = vim.split(vim.fn.glob("~/.config/nvim/lua/" .. directory .. "/*.lua"), "\n") -- Find all Lua files in the given directory and split them into a list.
