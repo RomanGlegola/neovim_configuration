@@ -1,11 +1,8 @@
 local lspconfig = require('lspconfig') -- Import the 'lspconfig' module, which is used to configure language servers in Neovim.
-
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) -- Enhance capabilities with those required by the 'cmp_nvim_lsp' plugin for improved autocompletion.
 local on_attach = function(client, bufnr) -- Define a common 'on_attach' function to be called when an LSP server attaches to a buffer.
     -- The body of the function should contain common setup code for when an LSP server attaches.
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()                                               -- Create a baseline set of capabilities.
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) -- Enhance capabilities with those required by the 'cmp_nvim_lsp' plugin for improved autocompletion.
 
 lspconfig.pyright.setup{         -- Configure the Python LSP server ('pyright').
     on_attach = on_attach,       -- Use the common 'on_attach' function.
